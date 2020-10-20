@@ -71,6 +71,8 @@ function WebHook(config) {
                 payload : data,
             };
 
+            logger.trace(JSON.stringify(evt));
+
             _notify(url, evt, headers)
                 .then((res) => {
                     if (res.statusCode === 200) {
